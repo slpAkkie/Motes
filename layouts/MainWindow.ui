@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>window.title</string>
+  </property>
+  <widget class="QWidget" name="BodyContent">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
+    <item>
+     <layout class="QHBoxLayout" name="ControlsContainer">
+      <item>
+       <widget class="QLineEdit" name="Searchbox"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="SearchButton">
+        <property name="text">
+         <string>btn.search</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="NewMovieButton">
+        <property name="text">
+         <string>btn.new-movie</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="MoviesContainer">
+      <item>
+       <spacer name="MoviesContainerSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="MenuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menumenubar_langs">
+    <property name="title">
+     <string>menubar.langs</string>
+    </property>
+    <addaction name="ActionLangs_enUS"/>
+    <addaction name="ActionLangs_ruRU"/>
+   </widget>
+   <addaction name="menumenubar_langs"/>
+  </widget>
+  <widget class="QStatusBar" name="StatusBar"/>
+  <action name="ActionLangs_enUS">
+   <property name="text">
+    <string>langs.en_US</string>
+   </property>
+  </action>
+  <action name="ActionLangs_ruRU">
+   <property name="text">
+    <string>langs.ru_RU</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

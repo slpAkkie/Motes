@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+lang_path=./resources/lang/
+
+for i in $lang_path*.ts
+do
+    source_filename=$(basename -- $i)
+
+    filename="${source_filename%.*}"
+
+    lrelease "$i" "$lang_path$filename.qm"
+done

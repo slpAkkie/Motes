@@ -1,0 +1,8 @@
+#!/bin/env bash
+
+ui_filename=$1
+ui_filepath=layouts/
+py_filepath=layouts/
+py_filename_prefix=ui_
+
+pyuic6 "$ui_filepath$ui_filename.ui" -o "$py_filepath$py_filename_prefix$ui_filename.py"

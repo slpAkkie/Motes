@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+ui_path=./layouts/
+lang_path=./resources/lang/
+source_lang="en_US"
+target_langs="en_US ru_RU"
+
+for i in $ui_path*.ui; do
+    for j in $target_langs; do
+        lupdate "$i" \
+            -source-language "$source_lang" \
+            -target-language "$j" \
+            -ts "$lang_path$j.ts"
+    done
+done
