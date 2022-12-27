@@ -5,14 +5,10 @@ lang_path=./resources/lang/src/
 source_lang="en_US"
 target_langs="en_US ru_RU"
 
-for i in $ui_path*.ui; do
-    filename=$(basename -- "$i")
-    filename="${filename%.*}"
-
-    for j in $target_langs; do
-        lupdate "$i" \
-            -source-language "$source_lang" \
-            -target-language "$j" \
-            -ts "$lang_path${filename}_$j.ts"
-    done
+for j in $target_langs; do
+    lupdate "$ui_path" \
+        -recursive \
+        -source-language "$source_lang" \
+        -target-language "$j" \
+        -ts "$lang_path$j.ts"
 done
