@@ -25,7 +25,10 @@ class Application(QApplication):
     @staticmethod
     def setLanguage(lang: str | None) -> None:
         """Load provided language into translator"""
-        lang_file_path = f'{AppConfig.lang_path}{lang}.qm'
+        if not lang is None:
+            AppConfig.lang = lang
+
+        lang_file_path = f'{AppConfig.lang_path}{AppConfig.lang}.qm'
 
         if not os.path.exists(lang_file_path):
             lang_file_path = f'{AppConfig.lang_path}{AppConfig.lang_default}.qm'
