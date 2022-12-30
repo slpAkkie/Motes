@@ -3,7 +3,6 @@ from db.Migration import Migration
 
 
 class CreateMovieTagsTable(Migration):
-    _db: Database
     _table: str = 'movie_tags'
 
     def create_table(self, drop: bool = False) -> None:

@@ -1,5 +1,6 @@
-from db.Database import Database
 from abc import ABC, abstractmethod
+
+from db.Database import Database
 
 
 class Migration(ABC):

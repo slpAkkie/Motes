@@ -2,32 +2,33 @@
 import os
 import locale
 import typing
-import darkdetect
-import resources.resources
 
+import darkdetect
 import PyQt6.QtCore as QtCore
-from config.App import AppConfig
 from PyQt6.QtWidgets import QApplication
+
+import resources.resources
 from base.Window import Window
+from config.App import AppConfig
 
 
 class Application(QApplication):
 
-    translator: QtCore.QTranslator = QtCore.QTranslator()
+    _translator: QtCore.QTranslator = QtCore.QTranslator()
 
-    windows: list[Window] = []
+    _windows: list[Window] = []
 
     def __init__(self, argv: typing.List[str]) -> None:
         super().__init__(argv)
 
         self.setLanguage(locale.getdefaultlocale()[0])
-        self.installTranslator(Application.translator)
+        self.installTranslator(Application._translator)
         self.loadTheme()
 
     @staticmethod
     def addWindow(window: Window) -> Window:
-        Application.windows.append(window)
-        window.closed.connect(lambda: Application.windows.remove(window))
+        Application._windows.append(window)
+        window.closed.connect(lambda: Application._windows.remove(window))
 
         return window
 
@@ -42,9 +43,9 @@ class Application(QApplication):
         if not os.path.exists(lang_file_path):
             lang_file_path = f'{AppConfig.Lang.path}{AppConfig.Lang.default}.qm'
 
-        Application.translator.load(lang_file_path)
+        Application._translator.load(lang_file_path)
 
-        for w in Application.windows:
+        for w in Application._windows:
             w.retranslateUi(w)
 
     def loadTheme(self) -> None:
