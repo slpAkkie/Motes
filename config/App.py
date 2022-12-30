@@ -1,7 +1,7 @@
 from abc import ABC
 
-from config.lang import LangConfig
-from config.database import DbConfig
+from config.Lang import LangConfig
+from config.Database import DbConfig
 
 
 class AppConfig(ABC):

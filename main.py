@@ -2,7 +2,7 @@
 
 import sys
 
-from application import Application
+from Application import Application
 from screens.MainWindow import MainWindow
 
 

@@ -1,4 +1,4 @@
-from db.database import Database
+from db.Database import Database
 from abc import ABC, abstractmethod
 
 

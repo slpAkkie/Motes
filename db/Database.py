@@ -1,16 +1,16 @@
 import sqlite3
-from config.database import DbConfig
+from config.App import AppConfig
 
 
 class Database():
-    _config: DbConfig
+    _config: AppConfig.DB
 
     _connection: sqlite3.Connection
     _cursor: sqlite3.Cursor
 
-    def __init__(self, config: DbConfig | None = None) -> None:
+    def __init__(self, config: AppConfig.DB | None = None) -> None:
         """Initializes database connection"""
-        self._config = DbConfig() if config is None else config
+        self._config = AppConfig.DB() if config is None else config
 
         self._connection = sqlite3.connect(self._config.file)
         self._cursor = self._connection.cursor()

@@ -6,9 +6,9 @@ import darkdetect
 import resources.resources
 
 import PyQt6.QtCore as QtCore
-from config.app import AppConfig
+from config.App import AppConfig
 from PyQt6.QtWidgets import QApplication
-from window import Window
+from Window import Window
 
 
 class Application(QApplication):

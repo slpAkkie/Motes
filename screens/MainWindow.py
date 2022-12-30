@@ -1,6 +1,6 @@
-from window import Window
+from Window import Window
 from PyQt6.QtCore import pyqtSlot
-from application import Application
+from Application import Application
 from layouts.ui_MainWindow import Ui_MainWindow
 from screens.NewMovieWindow import NewMovieWindow
 

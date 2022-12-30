@@ -1,4 +1,4 @@
-from window import Window
+from Window import Window
 from layouts.ui_NewMovieWindow import Ui_NewMovieWindow
 
 

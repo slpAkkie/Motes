@@ -3,10 +3,10 @@
 import sys
 from functools import reduce
 
-from db.migrations.movies import CreateMoviesTable
-from db.migrations.movie_tags import CreateMovieTagsTable
-from db.migrations.movie_entries import CreateMovieEntriesTable
-from db.database import Database
+from db.migrations.Movies import CreateMoviesTable
+from db.migrations.MovieTags import CreateMovieTagsTable
+from db.migrations.MovieEntries import CreateMovieEntriesTable
+from db.Database import Database
 
 
 def is_drop_table():
