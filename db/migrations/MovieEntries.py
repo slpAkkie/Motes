@@ -1,8 +1,7 @@
-from db.Database import Database
-from db.Migration import Migration
+from db.Migration import MigrationAbstract
 
 
-class CreateMovieEntriesTable(Migration):
+class CreateMovieEntriesTable(MigrationAbstract):
     _table: str = 'movie_entries'
 
     def create_table(self, drop: bool = False) -> None:

@@ -1,5 +1,2 @@
-from abc import ABC
-
-
-class DbConfig(ABC):
+class DbConfig:
     file: str = 'storage/main.db'

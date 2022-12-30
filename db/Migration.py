@@ -1,9 +1,9 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 
 from db.Database import Database
 
 
-class Migration(ABC):
+class MigrationAbstract:
     _db: Database
     _table: str
 

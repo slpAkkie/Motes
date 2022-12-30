@@ -1,9 +1,7 @@
-from abc import ABC
-
 from config.Lang import LangConfig
 from config.Database import DbConfig
 
 
-class AppConfig(ABC):
+class AppConfig:
     Lang = LangConfig
     DB = DbConfig
