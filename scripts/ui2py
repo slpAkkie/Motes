@@ -1,8 +1,24 @@
 #!/bin/env bash
 
-ui_filename=$1
-ui_filepath=layouts/
-py_filepath=layouts/
-py_filename_prefix=ui_
+if [ "$1" = "--all" ]
+then
+    ui_filepath=layouts/
+    py_filepath=layouts/
+    py_filename_prefix=ui_
 
-pyuic6 "$ui_filepath$ui_filename.ui" -o "$py_filepath$py_filename_prefix$ui_filename.py"
+    echo "Converting all in $ui_filepath"
+    for i in $ui_filepath*.ui
+    do
+        filename=$(basename -- "$i")
+        filename="${filename%.*}"
+        pyuic6 "$i" -o "$py_filepath$py_filename_prefix$filename.py"
+    done
+else
+    ui_filename=$1
+    ui_filepath=layouts/
+    py_filepath=layouts/
+    py_filename_prefix=ui_
+
+    echo "Converting $ui_filepath$ui_filename.ui"
+    pyuic6 "$ui_filepath$ui_filename.ui" -o "$py_filepath$py_filename_prefix$ui_filename.py"
+fi
