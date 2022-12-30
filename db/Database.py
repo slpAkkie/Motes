@@ -1,11 +1,10 @@
 import sqlite3
 
 from config.App import AppConfig
+from base.Singleton import Singleton
 
 
-class Database():
-    _instance = None
-
+class Database(metaclass=Singleton):
     _config: AppConfig.DB
 
     _connection: sqlite3.Connection
@@ -13,8 +12,6 @@ class Database():
 
     def __init__(self, config: AppConfig.DB | None = None):
         """Initializes database connection"""
-        if Database._instance is not None:
-            return Database._instance
 
         print('Creating new Database instance')
 
