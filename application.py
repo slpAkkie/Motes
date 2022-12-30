@@ -8,19 +8,29 @@ import resources.resources
 import PyQt6.QtCore as QtCore
 from config.app import AppConfig
 from PyQt6.QtWidgets import QApplication
+from window import Window
 
 
 class Application(QApplication):
+
     translator: QtCore.QTranslator = QtCore.QTranslator()
 
-    def __init__(self, argv: typing.List[str]) -> None:
-        self.setLanguage(locale.getdefaultlocale()[0])
+    mainWindow: Window
 
+    windows: list[Window] = []
+
+    def __init__(self, argv: typing.List[str]) -> None:
         super().__init__(argv)
 
+        self.setLanguage(locale.getdefaultlocale()[0])
+        self.installTranslator(Application.translator)
         self.loadTheme()
 
-        self.installTranslator(Application.translator)
+    @staticmethod
+    def addWindow(window: Window) -> Window:
+        Application.windows.append(window)
+
+        return window
 
     @staticmethod
     def setLanguage(lang: str | None) -> None:
@@ -34,6 +44,9 @@ class Application(QApplication):
             lang_file_path = f'{AppConfig.lang_path}{AppConfig.lang_default}.qm'
 
         Application.translator.load(lang_file_path)
+
+        for w in Application.windows:
+            w.retranslateUi(w)
 
     def loadTheme(self) -> None:
         """Returns stylesheet as a string depends on OS theme"""

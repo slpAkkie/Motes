@@ -15,21 +15,21 @@
     </message>
     <message>
         <location filename="../../../layouts/MainWindow.ui" line="33"/>
-        <source>btn.new-movie</source>
+        <source>btn.new</source>
         <translation>New</translation>
     </message>
     <message>
-        <location filename="../../../layouts/MainWindow.ui" line="69"/>
+        <location filename="../../../layouts/MainWindow.ui" line="84"/>
         <source>menubar.langs</source>
         <translation>Language</translation>
     </message>
     <message>
-        <location filename="../../../layouts/MainWindow.ui" line="79"/>
+        <location filename="../../../layouts/MainWindow.ui" line="94"/>
         <source>langs.en_US</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="../../../layouts/MainWindow.ui" line="84"/>
+        <location filename="../../../layouts/MainWindow.ui" line="99"/>
         <source>langs.ru_RU</source>
         <translation>Russian</translation>
     </message>

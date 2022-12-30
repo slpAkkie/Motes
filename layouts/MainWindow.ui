@@ -13,45 +13,60 @@
   <property name="windowTitle">
    <string>window.title</string>
   </property>
-  <widget class="QWidget" name="BodyContent">
-   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
+  <widget class="QWidget" name="Body">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
     <item>
-     <layout class="QHBoxLayout" name="ControlsContainer">
+     <layout class="QHBoxLayout" name="LayoutControls">
       <item>
-       <widget class="QLineEdit" name="Searchbox"/>
+       <widget class="QLineEdit" name="InputSearchbox"/>
       </item>
       <item>
-       <widget class="QPushButton" name="SearchButton">
+       <widget class="QPushButton" name="ButtonSearch">
         <property name="text">
          <string>btn.search</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="NewMovieButton">
+       <widget class="QPushButton" name="ButtonNewMovie">
         <property name="text">
-         <string>btn.new-movie</string>
+         <string>btn.new</string>
         </property>
        </widget>
       </item>
      </layout>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="MoviesContainer">
-      <item>
-       <spacer name="MoviesContainerSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
+     <widget class="QScrollArea" name="ScrollAreaMovies">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="LayoutScrollAreaMovies">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>780</width>
+         <height>497</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <spacer name="SpacesMovies">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -61,17 +76,17 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>27</height>
+     <height>24</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menumenubar_langs">
+   <widget class="QMenu" name="MenuBarLangs">
     <property name="title">
      <string>menubar.langs</string>
     </property>
     <addaction name="ActionLangs_enUS"/>
     <addaction name="ActionLangs_ruRU"/>
    </widget>
-   <addaction name="menumenubar_langs"/>
+   <addaction name="MenuBarLangs"/>
   </widget>
   <widget class="QStatusBar" name="StatusBar"/>
   <action name="ActionLangs_enUS">

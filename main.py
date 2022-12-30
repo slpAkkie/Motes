@@ -9,8 +9,7 @@ from screens.MainWindow import MainWindow
 def start_application() -> None:
     app = Application(sys.argv)
 
-    window = MainWindow()
-    window.show()
+    app.addWindow(MainWindow()).show()
 
     sys.exit(app.exec())
 
