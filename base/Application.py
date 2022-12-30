@@ -27,6 +27,7 @@ class Application(QApplication):
     @staticmethod
     def addWindow(window: Window) -> Window:
         Application.windows.append(window)
+        window.closed.connect(lambda: Application.windows.remove(window))
 
         return window
 
