@@ -5,7 +5,7 @@ from layouts.ui_MainWindow import Ui_MainWindow
 from screens.NewMovieWindow import NewMovieWindow
 
 
-class MainWindow(Window, Ui_MainWindow):
+class MainWindow(Ui_MainWindow, Window):
 
     def __init__(self, parent=None) -> None:
         """Initializes a window and its widgets"""
@@ -23,5 +23,4 @@ class MainWindow(Window, Ui_MainWindow):
     @pyqtSlot(name='on_ButtonNewMovie_clicked')
     def newMovie(self): Application.addWindow(NewMovieWindow(self)).show()
 
-    def setLang(self, lang: str):
-        Application.setLanguage(lang)
+    def setLang(self, lang: str): Application.setLanguage(lang)

@@ -15,8 +15,6 @@ class Application(QApplication):
 
     translator: QtCore.QTranslator = QtCore.QTranslator()
 
-    mainWindow: Window
-
     windows: list[Window] = []
 
     def __init__(self, argv: typing.List[str]) -> None:
@@ -36,12 +34,12 @@ class Application(QApplication):
     def setLanguage(lang: str | None) -> None:
         """Load provided language into translator"""
         if not lang is None:
-            AppConfig.lang = lang
+            AppConfig.Lang.current = lang
 
-        lang_file_path = f'{AppConfig.lang_path}{AppConfig.lang}.qm'
+        lang_file_path = f'{AppConfig.Lang.path}{AppConfig.Lang.current}.qm'
 
         if not os.path.exists(lang_file_path):
-            lang_file_path = f'{AppConfig.lang_path}{AppConfig.lang_default}.qm'
+            lang_file_path = f'{AppConfig.Lang.path}{AppConfig.Lang.default}.qm'
 
         Application.translator.load(lang_file_path)
 
