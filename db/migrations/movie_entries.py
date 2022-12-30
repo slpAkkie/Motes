@@ -1,5 +1,5 @@
 from db.database import Database
-from db.migrations.migration import Migration
+from db.migration import Migration
 
 
 class CreateMovieEntriesTable(Migration):

@@ -3,9 +3,9 @@
 import sys
 from functools import reduce
 
-from db.migrations.tables.movies import CreateMoviesTable
-from db.migrations.tables.movie_tags import CreateMovieTagsTable
-from db.migrations.tables.movie_entries import CreateMovieEntriesTable
+from db.migrations.movies import CreateMoviesTable
+from db.migrations.movie_tags import CreateMovieTagsTable
+from db.migrations.movie_entries import CreateMovieEntriesTable
 from db.database import Database
 
 
