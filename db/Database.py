@@ -13,12 +13,12 @@ class Database():
 
     def __init__(self, config: AppConfig.DB | None = None):
         """Initializes database connection"""
-        if not Database._instance is None:
+        if Database._instance is not None:
             return Database._instance
 
         print('Creating new Database instance')
 
-        self._config = AppConfig.DB() if config is None else config
+        self._config = config if config is not None else AppConfig.DB()
 
         self._connection = sqlite3.connect(self._config.file)
         self._cursor = self._connection.cursor()
