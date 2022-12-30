@@ -13,7 +13,7 @@ class CreateMovieEntriesTable(MigrationAbstract):
                 movie_id INTEGER,
                 title TEXT,
                 poster TEXT,
-                episodes INTEGER DEFAULT NULL,
+                episodes INTEGER,
                 stars REAL,
                 created_at TIMESTAMP,
                 updated_at TIMESTAMP

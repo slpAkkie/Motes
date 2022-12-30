@@ -15,10 +15,10 @@ def is_drop_table():
         sys.argv)) and (sys.argv[drop_parameter_index] == drop_parameter_value)
 
 
-if __name__ == '__main__':
+def migrate(drop: bool = False):
 
-    db: Database = Database()
-    drop_tables: bool = is_drop_table()
+    db = Database()
+    drop_tables: bool = drop
 
     print("--------------------------------------------------")
     print("Migration Started")
@@ -34,3 +34,7 @@ if __name__ == '__main__':
     print("--------------------------------------------------")
     print("Migration Done")
     print("--------------------------------------------------")
+
+
+if __name__ == '__main__':
+    migrate(drop=is_drop_table())
