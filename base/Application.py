@@ -8,7 +8,7 @@ import resources.resources
 import PyQt6.QtCore as QtCore
 from config.App import AppConfig
 from PyQt6.QtWidgets import QApplication
-from Window import Window
+from base.Window import Window
 
 
 class Application(QApplication):
