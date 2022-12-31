@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'layouts/NewMovieWindow.ui'
+# Form implementation generated from reading ui file 'layouts/MovieWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.0
 #
@@ -9,12 +9,12 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_NewMovieWindow(object):
-    def setupUi(self, NewMovieWindow):
-        NewMovieWindow.setObjectName("NewMovieWindow")
-        NewMovieWindow.resize(575, 625)
-        NewMovieWindow.setMinimumSize(QtCore.QSize(575, 625))
-        self.Body = QtWidgets.QWidget(NewMovieWindow)
+class Ui_MovieWindow(object):
+    def setupUi(self, MovieWindow):
+        MovieWindow.setObjectName("MovieWindow")
+        MovieWindow.resize(575, 625)
+        MovieWindow.setMinimumSize(QtCore.QSize(575, 625))
+        self.Body = QtWidgets.QWidget(MovieWindow)
         self.Body.setObjectName("Body")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.Body)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -88,24 +88,24 @@ class Ui_NewMovieWindow(object):
         self.verticalLayout_2.addLayout(self.LayoutMovieControls)
         self.verticalLayout_2.setStretch(0, 3)
         self.verticalLayout_2.setStretch(1, 2)
-        NewMovieWindow.setCentralWidget(self.Body)
-        self.menuBar = QtWidgets.QMenuBar(NewMovieWindow)
+        MovieWindow.setCentralWidget(self.Body)
+        self.menuBar = QtWidgets.QMenuBar(MovieWindow)
         self.menuBar.setGeometry(QtCore.QRect(0, 0, 575, 24))
         self.menuBar.setObjectName("menuBar")
-        NewMovieWindow.setMenuBar(self.menuBar)
-        self.statusbar = QtWidgets.QStatusBar(NewMovieWindow)
+        MovieWindow.setMenuBar(self.menuBar)
+        self.statusbar = QtWidgets.QStatusBar(MovieWindow)
         self.statusbar.setObjectName("statusbar")
-        NewMovieWindow.setStatusBar(self.statusbar)
+        MovieWindow.setStatusBar(self.statusbar)
 
-        self.retranslateUi(NewMovieWindow)
-        QtCore.QMetaObject.connectSlotsByName(NewMovieWindow)
+        self.retranslateUi(MovieWindow)
+        QtCore.QMetaObject.connectSlotsByName(MovieWindow)
 
-    def retranslateUi(self, NewMovieWindow):
+    def retranslateUi(self, MovieWindow):
         _translate = QtCore.QCoreApplication.translate
-        NewMovieWindow.setWindowTitle(_translate("NewMovieWindow", "window.title"))
-        self.LabelRate.setText(_translate("NewMovieWindow", "lb.rate"))
-        self.GroupEntries.setTitle(_translate("NewMovieWindow", "lb.entries"))
-        self.ButtonAddEntry.setText(_translate("NewMovieWindow", "btn.add"))
-        self.ButtonDelete.setText(_translate("NewMovieWindow", "btn.delete"))
-        self.ButtonCancel.setText(_translate("NewMovieWindow", "btn.cancel"))
-        self.ButtonSave.setText(_translate("NewMovieWindow", "btn.save"))
+        MovieWindow.setWindowTitle(_translate("MovieWindow", "window.title"))
+        self.LabelRate.setText(_translate("MovieWindow", "lb.rate"))
+        self.GroupEntries.setTitle(_translate("MovieWindow", "lb.entries"))
+        self.ButtonAddEntry.setText(_translate("MovieWindow", "btn.add"))
+        self.ButtonDelete.setText(_translate("MovieWindow", "btn.delete"))
+        self.ButtonCancel.setText(_translate("MovieWindow", "btn.cancel"))
+        self.ButtonSave.setText(_translate("MovieWindow", "btn.save"))

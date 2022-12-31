@@ -35,39 +35,39 @@
     </message>
 </context>
 <context>
-    <name>NewMovieWindow</name>
+    <name>MovieWindow</name>
     <message>
-        <location filename="../../../layouts/NewMovieWindow.ui" line="20"/>
+        <location filename="../../../layouts/MovieWindow.ui" line="20"/>
         <source>window.title</source>
         <translation>Motes</translation>
     </message>
     <message>
-        <location filename="../../../layouts/NewMovieWindow.ui" line="52"/>
+        <location filename="../../../layouts/MovieWindow.ui" line="52"/>
         <source>lb.rate</source>
         <translation>Оценка</translation>
     </message>
     <message>
-        <location filename="../../../layouts/NewMovieWindow.ui" line="98"/>
+        <location filename="../../../layouts/MovieWindow.ui" line="98"/>
         <source>lb.entries</source>
         <translation>Состоит из</translation>
     </message>
     <message>
-        <location filename="../../../layouts/NewMovieWindow.ui" line="124"/>
+        <location filename="../../../layouts/MovieWindow.ui" line="124"/>
         <source>btn.add</source>
         <translation>Добавить</translation>
     </message>
     <message>
-        <location filename="../../../layouts/NewMovieWindow.ui" line="151"/>
+        <location filename="../../../layouts/MovieWindow.ui" line="151"/>
         <source>btn.delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../../../layouts/NewMovieWindow.ui" line="171"/>
+        <location filename="../../../layouts/MovieWindow.ui" line="171"/>
         <source>btn.cancel</source>
         <translation>Отменить</translation>
     </message>
     <message>
-        <location filename="../../../layouts/NewMovieWindow.ui" line="178"/>
+        <location filename="../../../layouts/MovieWindow.ui" line="178"/>
         <source>btn.save</source>
         <translation>Сохранить</translation>
     </message>
