@@ -38,15 +38,26 @@ class ModelAbstract(ABC):
 
         return f'{class_name}s'
 
+    @staticmethod
+    def __slit_cols_values(data: dict):
+        return [i for i in data.keys()], [i for i in data.values()]
+
     @classmethod
     def create(cls, data: dict):
+        if len(data.keys()) == 0:
+            Database().execute(
+                query=f"""INSERT INTO {cls.getTable()} DEFAULT VALUES""",
+                commit=True
+            )
+
+            return cls.find(Database().lastInsertedId())
+
         for i in data.keys():
             if (i not in cls._fillable):
                 raise Exception(
                     f'Column [{i}] not in _fillable for model [{cls.__name__}]')
 
-        columns: list = [i for i in data.keys()]
-        values: list = [i for i in data.values()]
+        columns, values = cls.__slit_cols_values(data)
 
         Database().execute(
             query=f"""INSERT INTO {cls.getTable()} (
@@ -57,6 +68,8 @@ class ModelAbstract(ABC):
             parameters=values,
             commit=True
         )
+
+        return cls.find(Database().lastInsertedId())
 
     @classmethod
     def columns(cls) -> tuple:
@@ -82,7 +95,8 @@ class ModelAbstract(ABC):
 
     @classmethod
     def all(cls, count: int | None = None, offset: int | None = None) -> list:
-        q_res = Database().query(f"""SELECT * FROM {cls.getTable()}""")
+        q_res = Database().query(
+            f"""SELECT * FROM {cls.getTable()} ORDER BY {cls._primary_key} DESC""")
 
         return [cls.__new_from_list(d) for d in q_res]
 

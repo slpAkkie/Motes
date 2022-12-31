@@ -1,5 +1,5 @@
 
-from PyQt6 import QtGui, QtWidgets
+from PyQt6 import QtGui
 from PyQt6.QtCore import pyqtSlot
 
 from base.Window import Window
@@ -23,7 +23,15 @@ class MainWindow(Ui_MainWindow, Window):
     def setLang_ruRU(self): Application.setLanguage('ru_RU')
 
     @pyqtSlot(name='on_ButtonNewMovie_clicked')
-    def newMovie(self): Application.addWindow(MovieWindow(self)).show()
+    def newMovie(self):
+        model = Movie.create({})
+
+        if model is None:
+            return
+
+        self._createWidgetForModel(model)
+
+        Application.addWindow(MovieWindow(model, self)).show()
 
     def showEvent(self, a0: QtGui.QShowEvent) -> None:
         super().showEvent(a0)
@@ -31,13 +39,16 @@ class MainWindow(Ui_MainWindow, Window):
         movies = Movie.all()
 
         for i in range(0, len(movies)):
-            movie_widget = MovieWidget(
-                movie=movies[i],
-                parent=self
-            )
+            self._createWidgetForModel(movies[i], i)
 
-            self.LayoutScrollAreaMovies.insertWidget(i, movie_widget)
-            self._movie_widgets.append(movie_widget)
+    def _createWidgetForModel(self, model: Movie, pos: int = 0):
+        movie_widget = MovieWidget(
+            movie=model,
+            parent=self
+        )
+
+        self.LayoutScrollAreaMovies.insertWidget(pos, movie_widget)
+        self._movie_widgets.append(movie_widget)
 
     def retranslateUi(self, MainWindow):
         super().retranslateUi(MainWindow)

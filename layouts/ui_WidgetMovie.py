@@ -41,9 +41,9 @@ class Ui_WidgetMovie(object):
         self.LabelRateValue.setObjectName("LabelRateValue")
         self.LayoutRate.addWidget(self.LabelRateValue)
         self.horizontalLayout_2.addLayout(self.LayoutRate)
-        self.ButtonEdit = QtWidgets.QPushButton(self.Container)
-        self.ButtonEdit.setObjectName("ButtonEdit")
-        self.horizontalLayout_2.addWidget(self.ButtonEdit)
+        self.ButtonOpen = QtWidgets.QPushButton(self.Container)
+        self.ButtonOpen.setObjectName("ButtonOpen")
+        self.horizontalLayout_2.addWidget(self.ButtonOpen)
         self.LayoutWidget.addWidget(self.Container)
 
         self.retranslateUi(WidgetMovie)
@@ -54,4 +54,4 @@ class Ui_WidgetMovie(object):
         self.LabelTitle.setText(_translate("WidgetMovie", "lb.title"))
         self.LabelRate.setText(_translate("WidgetMovie", "lb.rate"))
         self.LabelRateValue.setText(_translate("WidgetMovie", "lb.rate-value"))
-        self.ButtonEdit.setText(_translate("WidgetMovie", "btn.open"))
+        self.ButtonOpen.setText(_translate("WidgetMovie", "btn.open"))

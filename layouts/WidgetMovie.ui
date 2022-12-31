@@ -77,7 +77,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="ButtonEdit">
+       <widget class="QPushButton" name="ButtonOpen">
         <property name="text">
          <string>btn.open</string>
         </property>

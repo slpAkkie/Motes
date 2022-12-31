@@ -1,5 +1,10 @@
+
+from PyQt6.QtCore import pyqtSlot
+
 from base.Widget import Widget
+from base.Application import Application
 from layouts.ui_WidgetMovie import Ui_WidgetMovie
+from screens.MovieWindow import MovieWindow
 
 from db.models.Movie import Movie
 
@@ -18,3 +23,10 @@ class MovieWidget(Ui_WidgetMovie, Widget):
 
         self.LabelTitle.setText(self._model['title'])
         self.LabelRateValue.setText(str(self._model['rate']))
+
+    @pyqtSlot(name='on_ButtonOpen_clicked')
+    def open(self):
+        Application.addWindow(MovieWindow(
+            movie=self._model,
+            parent=self.parent()
+        )).show()

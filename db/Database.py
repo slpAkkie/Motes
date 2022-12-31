@@ -52,3 +52,6 @@ class Database(metaclass=Singleton):
     def rollback(self) -> None:
         """Rollback all uncommited changes"""
         self._connection.rollback()
+
+    def lastInsertedId(self) -> int | None:
+        return self._cursor.lastrowid

@@ -10,11 +10,11 @@ class CreateMoviesTable(MigrationAbstract):
         self._db.execute(
             query=f"""CREATE TABLE IF NOT EXISTS {self._table} (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                title TEXT,
-                poster TEXT,
-                rate REAL,
-                created_at TIMESTAMP,
-                updated_at TIMESTAMP
+                title TEXT NOT NULL DEFAULT "",
+                poster TEXT DEFAULT NULL,
+                rate REAL NOT NULL DEFAULT 0.0,
+                created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
             )""",
             commit=True
         )

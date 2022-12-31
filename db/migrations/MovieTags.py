@@ -10,8 +10,8 @@ class CreateMovieTagsTable(MigrationAbstract):
         self._db.execute(
             query=f"""CREATE TABLE IF NOT EXISTS {self._table} (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                movie_id INTEGER,
-                title TEXT
+                movie_id INTEGER NOT NULL,
+                title TEXT NOT NULL
             )""",
             commit=True
         )
