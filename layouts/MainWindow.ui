@@ -14,7 +14,7 @@
    <string>window.title</string>
   </property>
   <widget class="QWidget" name="Body">
-   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+   <layout class="QVBoxLayout" name="LayoutBody" stretch="0,0">
     <item>
      <layout class="QHBoxLayout" name="LayoutControls">
       <item>
@@ -41,7 +41,7 @@
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
-      <widget class="QWidget" name="LayoutScrollAreaMovies">
+      <widget class="QWidget" name="ScrollAreaMoviesContainer">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -50,7 +50,7 @@
          <height>497</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <layout class="QVBoxLayout" name="LayoutScrollAreaMovies">
         <item>
          <spacer name="SpacesMovies">
           <property name="orientation">

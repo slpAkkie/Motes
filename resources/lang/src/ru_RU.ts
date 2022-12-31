@@ -72,4 +72,31 @@
         <translation>Сохранить</translation>
     </message>
 </context>
+<context>
+    <name>WidgetMovie</name>
+    <message>
+        <location filename="../../../layouts/WidgetMovie.ui" line="44"/>
+        <source>lb.title</source>
+        <translation>Название</translation>
+    </message>
+    <message>
+        <location filename="../../../layouts/WidgetMovie.ui" line="66"/>
+        <source>lb.rate</source>
+        <translation>Оценка</translation>
+    </message>
+    <message>
+        <location filename="../../../layouts/WidgetMovie.ui" line="73"/>
+        <source>lb.rate-value</source>
+        <translation>0.0</translation>
+    </message>
+    <message>
+        <location filename="../../../layouts/WidgetMovie.ui" line="82"/>
+        <source>btn.open</source>
+        <translation>Открыть</translation>
+    </message>
+    <message>
+        <source>btn.edit</source>
+        <translation type="vanished">Редактировать</translation>
+    </message>
+</context>
 </TS>

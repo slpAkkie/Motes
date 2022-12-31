@@ -816,7 +816,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGFTzwJ5x7u/LA="
 							},
-							"name": "stars",
+							"name": "rate",
 							"type": "REAL",
 							"length": 0
 						},

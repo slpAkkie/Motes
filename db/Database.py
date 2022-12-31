@@ -13,7 +13,7 @@ class Database(metaclass=Singleton):
     def __init__(self, config: AppConfig.DB | None = None):
         """Initializes database connection"""
 
-        print('Creating new Database instance')
+        print('Creating new Database connection instance')
 
         self._config = config if config is not None else AppConfig.DB()
 

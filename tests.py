@@ -14,8 +14,8 @@ def run_tests():
     print(MovieEntry.getTable())
     print(MovieTag.getTable())
 
-    Movie.create({'title': 'First movie'})
-    Movie.create({'title': 'second movie'})
+    Movie.create({'title': 'First movie', 'rate': 4.7})
+    Movie.create({'title': 'second movie', 'rate': 8.9})
 
     print("--------------------------------------------------")
     print(f"Columns: {Movie.columns()}")

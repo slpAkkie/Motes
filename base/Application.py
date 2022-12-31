@@ -4,7 +4,7 @@ import locale
 import typing
 
 import darkdetect
-import PyQt6.QtCore as QtCore
+from PyQt6 import QtCore
 from PyQt6.QtWidgets import QApplication
 
 import resources.resources

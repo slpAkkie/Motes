@@ -12,6 +12,7 @@ class CreateMoviesTable(MigrationAbstract):
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 title TEXT,
                 poster TEXT,
+                rate REAL,
                 created_at TIMESTAMP,
                 updated_at TIMESTAMP
             )""",

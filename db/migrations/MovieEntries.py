@@ -14,7 +14,7 @@ class CreateMovieEntriesTable(MigrationAbstract):
                 title TEXT,
                 poster TEXT,
                 episodes INTEGER,
-                stars REAL,
+                rate REAL,
                 created_at TIMESTAMP,
                 updated_at TIMESTAMP
             )""",

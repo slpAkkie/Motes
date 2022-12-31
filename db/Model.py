@@ -117,4 +117,8 @@ class ModelAbstract(ABC):
             raise Exception(
                 'Indexing of Model available only with single value')
 
+        if indices not in self._original:
+            raise Exception(
+                f"The property [{indices}] doesn't exists in the [{self.__class__.__name__}] model")
+
         return self._original[indices]

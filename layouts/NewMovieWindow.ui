@@ -45,7 +45,7 @@
          <widget class="QLineEdit" name="InputTitle"/>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="LayoutMovieStars">
+         <layout class="QHBoxLayout" name="LayoutMovieRate">
           <item>
            <widget class="QLabel" name="LabelRate">
             <property name="text">
@@ -54,14 +54,14 @@
            </widget>
           </item>
           <item>
-           <widget class="QDoubleSpinBox" name="InputStars">
+           <widget class="QDoubleSpinBox" name="InputRate">
             <property name="maximum">
              <double>10.000000000000000</double>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="SpacerMovieStars">
+           <spacer name="SpacerMovieRate">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>

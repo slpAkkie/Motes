@@ -72,4 +72,31 @@
         <translation>Save</translation>
     </message>
 </context>
+<context>
+    <name>WidgetMovie</name>
+    <message>
+        <location filename="../../../layouts/WidgetMovie.ui" line="44"/>
+        <source>lb.title</source>
+        <translation>Title</translation>
+    </message>
+    <message>
+        <location filename="../../../layouts/WidgetMovie.ui" line="66"/>
+        <source>lb.rate</source>
+        <translation>Rate</translation>
+    </message>
+    <message>
+        <location filename="../../../layouts/WidgetMovie.ui" line="73"/>
+        <source>lb.rate-value</source>
+        <translation>0.0</translation>
+    </message>
+    <message>
+        <location filename="../../../layouts/WidgetMovie.ui" line="82"/>
+        <source>btn.open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>btn.edit</source>
+        <translation type="vanished">Edit</translation>
+    </message>
+</context>
 </TS>
