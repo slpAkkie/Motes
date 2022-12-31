@@ -13,8 +13,9 @@ class ModelAbstract(ABC):
 
     _fillable: tuple = ()
     _original: dict = {}
+    _dirty: dict = {}
 
-    def __init__(self, data: dict = {}):
+    def __init__(self, data: dict):
         self._db = Database()
         self.columns()
 
@@ -126,13 +127,37 @@ class ModelAbstract(ABC):
 
         return [cls.__new_from_list(d) for d in res]
 
-    def __getitem__(self, indices):
-        if isinstance(indices, tuple):
+    def save(self):
+        if len(self._dirty.keys()) == 0:
+            return
+
+        columns, values = self.__slit_cols_values(self._dirty)
+
+        Database().execute(
+            query=f"""UPDATE {self.getTable()}
+                SET {', '.join([f'{c}=?' for c in columns])}
+                WHERE {self._primary_key}=?""",
+            parameters=[*values, self[self._primary_key]],
+            commit=True
+        )
+
+    def __getitem__(self, index):
+        if isinstance(index, tuple):
             raise Exception(
                 'Indexing of Model available only with single value')
 
-        if indices not in self._original:
+        if index not in self._original:
             raise Exception(
-                f"The property [{indices}] doesn't exists in the [{self.__class__.__name__}] model")
+                f"The property [{index}] doesn't exists in the [{self.__class__.__name__}] model")
 
-        return self._original[indices]
+        return self._dirty[index] if index in self._dirty else self._original[index]
+
+    def __setitem__(self, index, value):
+        if index not in self._columns:
+            raise Exception(
+                f"The property [{index}] doesn't exists in the [{self.__class__.__name__}] model")
+
+        if not self._original[index] == value:
+            self._dirty[index] = value
+
+        return value

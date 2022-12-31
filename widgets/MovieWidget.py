@@ -26,7 +26,10 @@ class MovieWidget(Ui_WidgetMovie, Widget):
 
     @pyqtSlot(name='on_ButtonOpen_clicked')
     def open(self):
-        Application.addWindow(MovieWindow(
+        window = MovieWindow(
             movie=self._model,
             parent=self.parent()
-        )).show()
+        )
+        window.saved.connect(lambda: self.retranslateUi(self))
+
+        Application.addWindow(window).show()

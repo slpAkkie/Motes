@@ -29,9 +29,7 @@ class MainWindow(Ui_MainWindow, Window):
         if model is None:
             return
 
-        self._createWidgetForModel(model)
-
-        Application.addWindow(MovieWindow(model, self)).show()
+        self._createWidgetForModel(model).ButtonOpen.click()
 
     def showEvent(self, a0: QtGui.QShowEvent) -> None:
         super().showEvent(a0)
@@ -41,7 +39,7 @@ class MainWindow(Ui_MainWindow, Window):
         for i in range(0, len(movies)):
             self._createWidgetForModel(movies[i], i)
 
-    def _createWidgetForModel(self, model: Movie, pos: int = 0):
+    def _createWidgetForModel(self, model: Movie, pos: int = 0) -> MovieWidget:
         movie_widget = MovieWidget(
             movie=model,
             parent=self
@@ -49,6 +47,8 @@ class MainWindow(Ui_MainWindow, Window):
 
         self.LayoutScrollAreaMovies.insertWidget(pos, movie_widget)
         self._movie_widgets.append(movie_widget)
+
+        return movie_widget
 
     def retranslateUi(self, MainWindow):
         super().retranslateUi(MainWindow)
