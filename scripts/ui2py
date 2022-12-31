@@ -1,5 +1,11 @@
 #!/bin/env bash
 
+if [ -z "$1" ]
+then
+    echo "You should specify the *ui filename or --all parameter"
+    exit
+fi
+
 if [ "$1" = "--all" ]
 then
     ui_filepath=layouts/
