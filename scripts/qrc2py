@@ -1,3 +1,0 @@
-#!/bin/env bash
-
-rcc -g python resources/resources.qrc | sed '0,/PySide./s//PyQt6/' > resources/resources.py
