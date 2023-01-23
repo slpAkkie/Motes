@@ -17,6 +17,7 @@ class ModelAbstract(ABC):
 
     def __init__(self, data: dict):
         self._db = Database()
+        self._dirty = {}
         self.columns()
 
         if len(data.keys()) > 0:
@@ -138,6 +139,20 @@ class ModelAbstract(ABC):
                 SET {', '.join([f'{c}=?' for c in columns])}
                 WHERE {self._primary_key}=?""",
             parameters=[*values, self[self._primary_key]],
+            commit=True
+        )
+
+    def cancel(self):
+        self._dirty = {}
+
+    def delete(self):
+        if self[self._primary_key] is None:
+            return
+
+        Database().execute(
+            query=f"""DELETE FROM {self.getTable()}
+                WHERE {self._primary_key}=?""",
+            parameters=[self[self._primary_key]],
             commit=True
         )
 

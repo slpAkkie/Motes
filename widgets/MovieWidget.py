@@ -31,5 +31,6 @@ class MovieWidget(Ui_WidgetMovie, Widget):
             parent=self.parent()
         )
         window.saved.connect(lambda: self.retranslateUi(self))
+        window.deleted.connect(lambda: self.deleteLater())
 
         Application.addWindow(window).show()

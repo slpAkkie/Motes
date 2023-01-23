@@ -5,7 +5,6 @@ from PyQt6.QtCore import pyqtSlot
 from base.Window import Window
 from base.Application import Application
 from layouts.ui_MainWindow import Ui_MainWindow
-from screens.MovieWindow import MovieWindow
 from db.models.Movie import Movie
 from widgets.MovieWidget import MovieWidget
 
