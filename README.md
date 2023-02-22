@@ -1,48 +1,32 @@
-## Motes
+# Motes
 
-Simple list of movies with its statuses and notes.
+Простенький мониторинг истории вашей медиатеки.
 
-### Getting started
+## Начало работы
 
-First off all you need to install venv for the project.
-
-To do it on Windows use this command:
-
-```cmd
-.\script\install.bat
-```
-
-On Linux:
+Запустите скрипт установки, чтобы создать виртуальное окружение и усвтановить зависимости
 
 ```sh
-chmod +x ./script/install
-./script/install
+# Windows
+.\scripts\install.bat
+
+# Linux
+chmod +x ./Script/install.sh
+./script/install.sh
 ```
 
-### Compile .ui files
+## Компиляция .ui файлов
 
-If you will modify design of the app with QtDesigner you will need to recompile `ui` files.
+Для быстрой компиляции можете использовать скрипты `ui2py.bat` на Windows или `ui2py.sh` на Linux. Аргументом нужно передать название `ui` файла без расширения
 
-There are already configured scripts for that, just use them.
+> Например: `./Scripts/ui2py.sh MainWindow`
 
-On Windows:
+Или использовать `puic6` из комплекта `pyqt6`
 
-```cmd
-.\script\ui2py.bat
-```
-
-On Linux:
-
-```sh
-./script/ui2py
-```
-
-Or use `pyuic6` from `pyqt6` package manually.
-
-### Version
+## Версия
 
 1.x-dev
 
-### Author
+## Автор
 
 Shamanin Alenxadr (@slpAkkie)
